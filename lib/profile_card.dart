@@ -2,20 +2,24 @@ import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {
   final pathImage;
+  final name;
+  final email;
 
-  ProfileCard(this.pathImage);
+  ProfileCard(this.pathImage, this.name, this.email);
 
   @override
   Widget build(BuildContext context) {
 
-  final textName = Container(child: Text(
-    'Pathum Tzoo',
-    style: TextStyle(fontSize: 16, color: Colors.white,),
-  ),);
+  final textName = Text(
+    name,
+    textAlign: TextAlign.end,
+    style: TextStyle(fontSize: 22, color: Colors.white,),
+  );
 
   final textEmail = Container(child: Text(
-    'Pathum Tzoo',
-    style: TextStyle(fontSize: 16, color: Colors.white,),
+    email,
+    textAlign: TextAlign.end,
+    style: TextStyle(fontSize: 18, color: Colors.white54,),
   ),);
 
   final photo = Container(
@@ -24,6 +28,7 @@ class ProfileCard extends StatelessWidget {
     margin: EdgeInsets.only(top: 90.0, left: 20.0, right: 20),
     decoration: BoxDecoration(
       shape: BoxShape.circle,
+      border: Border.all(width: 2, color: Colors.white),
       image: DecorationImage(fit: BoxFit.cover, image: AssetImage(pathImage))),
   );
     
@@ -31,9 +36,13 @@ class ProfileCard extends StatelessWidget {
       children: <Widget>[
         photo,
         Container(
-          child: Column(children: <Widget>[textName, textEmail],),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: <Widget>[textName, textEmail],),
           height: 60,
           margin: EdgeInsets.only(top: 110),
+        ),
+        Container(
+          child: Icon(Icons.settings, color: Colors.white70, size: 15),
+          margin: EdgeInsets.only(left: 80),
         )
       ],
     );

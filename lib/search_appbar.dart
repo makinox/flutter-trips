@@ -6,7 +6,7 @@ class SearchAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: <Widget>[GradientBack('Profile'), ProfileCard('assets/img/people.jpg')],
+      children: <Widget>[GradientBack('Profile'), ProfileCard('assets/img/people.jpg', 'Pathoum Tzoo', 'pathoumzoo1@gmail.com')],
     );
   }
 }

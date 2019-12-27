@@ -6,7 +6,7 @@ class Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
-      value: SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+      value: SystemUiOverlayStyle(statusBarColor: Colors.transparent, /* systemNavigationBarColor: Colors.transparent */),
       child: Trips(),
     );
   }

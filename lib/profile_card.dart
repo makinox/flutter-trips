@@ -41,8 +41,13 @@ class ProfileCard extends StatelessWidget {
           margin: EdgeInsets.only(top: 110),
         ),
         Container(
-          child: Icon(Icons.settings, color: Colors.white70, size: 15),
-          margin: EdgeInsets.only(left: 80),
+          child: IconButton(
+            icon: Icon(Icons.settings, color: Colors.white70),
+            iconSize: 15,
+            tooltip: 'Increase volume by 10',
+            onPressed: (){print('Pressed');},
+          ),
+          margin: EdgeInsets.only(left: 60),
         )
       ],
     );

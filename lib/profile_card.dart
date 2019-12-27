@@ -21,7 +21,7 @@ class ProfileCard extends StatelessWidget {
   final photo = Container(
     width: 80.0,
     height: 80.0,
-    margin: EdgeInsets.only(top: 20.0, left: 20.0,),
+    margin: EdgeInsets.only(top: 100.0, left: 20.0, right: 20),
     decoration: BoxDecoration(
       shape: BoxShape.circle,
       image: DecorationImage(fit: BoxFit.cover, image: AssetImage(pathImage))),
@@ -30,7 +30,11 @@ class ProfileCard extends StatelessWidget {
     return Row(
       children: <Widget>[
         photo,
-        Container(height: 40, child: Column(children: <Widget>[textName, textEmail],),)
+        Container(height: 140, child: Container(
+          child: Column(children: <Widget>[textName, textEmail],),
+          height: 40,
+          margin: EdgeInsets.only(top: 100),
+        ),)
       ],
     );
   }

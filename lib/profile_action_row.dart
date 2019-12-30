@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trips/floating_action_button_blue.dart';
 
-class SearchActionRow extends StatelessWidget {
+class ProfileActionRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row( mainAxisSize: MainAxisSize.min, children: <Widget>[

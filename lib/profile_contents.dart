@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trips/profile_data_image.dart';
 
 class ProfileContents extends StatelessWidget {
   @override
@@ -10,33 +11,12 @@ class ProfileContents extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(top: 320),
-              child: Text('Hola list view title', style: TextStyle(fontSize: 30),),
+              margin: EdgeInsets.only(top: 260),
             ),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
-            Text('Hola list view sub', style: TextStyle(fontSize: 30),),
+            ProfileDataimage('assets/img/beach.jpeg'),
+            ProfileDataimage('assets/img/beach.jpeg'),
+            ProfileDataimage('assets/img/beach.jpeg'),
+            ProfileDataimage('assets/img/beach.jpeg'),
           ],
         )
       ],

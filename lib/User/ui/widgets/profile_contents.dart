@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trips/profile_data_image.dart';
+import 'package:trips/User/ui/widgets/profile_data_image.dart';
 
 class ProfileContents extends StatelessWidget {
   @override

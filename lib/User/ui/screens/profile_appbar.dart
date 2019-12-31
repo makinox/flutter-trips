@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trips/gradientBack.dart';
-import 'package:trips/profile_action_row.dart';
-import 'package:trips/profile_card.dart';
+import 'package:trips/User/ui/widgets/profile_action_row.dart';
+import 'package:trips/User/ui/widgets/profile_card.dart';
+import 'package:trips/widgets/gradientBack.dart';
 
 class ProfileAppBar extends StatelessWidget {
   @override

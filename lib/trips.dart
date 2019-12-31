@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:trips/home_trips.dart';
-import 'package:trips/profile_trips.dart';
-import 'package:trips/search_trips.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:trips/Place/ui/screens/home_trips.dart';
+import 'package:trips/Place/ui/screens/search_trips.dart';
+import 'package:trips/User/ui/screens/profile_trips.dart';
 
 class Trips extends StatelessWidget {
 
@@ -17,7 +17,7 @@ class Trips extends StatelessWidget {
     
     return Scaffold(
       bottomNavigationBar: CupertinoTabScaffold(
-        tabBar: CupertinoTabBar(backgroundColor: Colors.transparent ,activeColor: Colors.indigo,items: [
+        tabBar: CupertinoTabBar(backgroundColor: Colors.white60 ,activeColor: Colors.indigo,items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home), title: Text("")),
           BottomNavigationBarItem(

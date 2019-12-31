@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trips/navigation_bar.dart';
+import 'package:trips/widgets/navigation_bar.dart';
 
 void main() => runApp(MyApp());
 

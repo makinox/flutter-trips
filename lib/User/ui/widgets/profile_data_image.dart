@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trips/floating_action_button_green.dart';
+import 'package:trips/widgets/floating_action_button_green.dart';
 
 class ProfileDataimage extends StatelessWidget {
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trips/widgets/button_green.dart';
 import 'package:trips/widgets/gradientBack.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -23,14 +24,20 @@ class _SignInScreen extends State<SignInScreen> {
         alignment: Alignment.center,
         children: <Widget>[
           GradientBack("", null),
-          Column(children: <Widget>[
+          Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
             Text("Welcome \n this is your travel app",
               style: TextStyle(
                 fontSize: 37,
                 fontFamily: "Lato",
                 color: Colors.white,
                 fontWeight: FontWeight.bold
-              ))
+              )),
+              ButtonGreen(
+                text: "Login with Gmail",
+                onPressed: (){print('hola');},
+                width: 300,
+                height: 50,
+              )
           ],)
         ],
       ),

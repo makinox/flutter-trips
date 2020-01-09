@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class GradientBack extends StatelessWidget {
 
   final title;
-  double height = 250.0;
+  final double height;
 
   GradientBack(this.title, this.height);
 

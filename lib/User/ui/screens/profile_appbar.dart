@@ -8,7 +8,7 @@ class ProfileAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        GradientBack('Profile'),
+        GradientBack('Profile', 250.0),
         Column(
           children: <Widget>[
             ProfileCard('assets/img/people.jpg', 'Pathoum Tzoo','pathoumzoo1@gmail.com'),

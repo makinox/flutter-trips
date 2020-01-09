@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trips/User/bloc/block_user.dart';
-import 'package:trips/widgets/navigation_bar.dart';
+import 'package:trips/User/ui/screens/sign_in_screen.dart';
+// import 'package:trips/widgets/navigation_bar.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 void main() => runApp(MyApp());
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       child: MaterialApp(
         title: 'Flutter Demo',
-        home: Navigation(),
+        // home: Navigation(),
+        home: SignInScreen(),
       ),
       bloc: UserBlock(),
     );

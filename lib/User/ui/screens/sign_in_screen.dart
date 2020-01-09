@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips/User/bloc/block_user.dart';
 import 'package:trips/widgets/button_green.dart';
 import 'package:trips/widgets/gradientBack.dart';
 
@@ -12,9 +14,12 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreen extends State<SignInScreen> {
+
+  UserBlock userBlock;
+
   @override
   Widget build(BuildContext context) {
-    
+    userBlock = BlocProvider.of(context); 
     return signInGoogleUI();
   }
 
@@ -34,7 +39,7 @@ class _SignInScreen extends State<SignInScreen> {
               )),
               ButtonGreen(
                 text: "Login with Gmail",
-                onPressed: (){print('hola');},
+                onPressed: (){userBlock.singnIn().then((user) => print('El usuario es ${user.displayName}'));},
                 width: 300,
                 height: 50,
               )

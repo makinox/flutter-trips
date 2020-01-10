@@ -3,6 +3,7 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips/User/bloc/block_user.dart';
 import 'package:trips/widgets/button_green.dart';
 import 'package:trips/widgets/gradientBack.dart';
+import 'package:trips/widgets/navigation_bar.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -20,7 +21,21 @@ class _SignInScreen extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     userBlock = BlocProvider.of(context); 
-    return signInGoogleUI();
+    return _handleCurrentSession();
+  }
+
+  Widget _handleCurrentSession(){
+    return StreamBuilder(
+      stream: userBlock.authStatus,
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        // snapshot - data - Object user
+        if (!snapshot.hasData || snapshot.hasError) {
+          return signInGoogleUI();
+        } else {
+          return Navigation();
+        }
+      },
+    );
   }
 
   Widget signInGoogleUI(){

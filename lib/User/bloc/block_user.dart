@@ -4,13 +4,20 @@ import 'package:trips/User/repository/auth_repository.dart';
 
 class UserBlock implements Bloc {
 
-  final _auth_repository = AuthRepository();
+  final _authRepository = AuthRepository();
+
+  // Flujo de datos -Streams
+  // Stream - Firebase
+  // StreamController
+
+  Stream<FirebaseUser> streamFirebase =  FirebaseAuth.instance.onAuthStateChanged;
+  Stream<FirebaseUser> get authStatus => streamFirebase;
 
   // Caso de uso
   // 1. Sign in con google
 
   Future<FirebaseUser> singnIn() {
-    return _auth_repository.signInFirebase();
+    return _authRepository.signInFirebase();
   }
 
   @override

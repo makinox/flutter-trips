@@ -20,6 +20,12 @@ class UserBlock implements Bloc {
     return _authRepository.signInFirebase();
   }
 
+  // 2. Sign out
+
+  signOut(){
+    return _authRepository.signOut();
+  }
+
   @override
   void dispose() {
     

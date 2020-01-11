@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:trips/User/model/user.dart';
 
 class ProfileCard extends StatelessWidget {
-  final pathImage;
-  final name;
-  final email;
 
-  ProfileCard(this.pathImage, this.name, this.email);
+  User user;
+
+  ProfileCard(this.user);
 
   @override
   Widget build(BuildContext context) {
 
   final textName = Text(
-    name,
+    user.name,
     textAlign: TextAlign.end,
     style: TextStyle(fontSize: 22, color: Colors.white,),
   );
 
   final textEmail = Container(child: Text(
-    email,
+    user.email,
     textAlign: TextAlign.end,
     style: TextStyle(fontSize: 18, color: Colors.white54,),
   ),);
@@ -29,7 +29,7 @@ class ProfileCard extends StatelessWidget {
     decoration: BoxDecoration(
       shape: BoxShape.circle,
       border: Border.all(width: 2, color: Colors.white),
-      image: DecorationImage(fit: BoxFit.cover, image: AssetImage(pathImage))),
+      image: DecorationImage(fit: BoxFit.cover, image: /* AssetImage(user.photoURL) */ NetworkImage(user.photoURL))),
   );
     
     return Row(

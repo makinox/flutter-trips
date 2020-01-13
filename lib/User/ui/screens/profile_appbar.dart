@@ -33,21 +33,12 @@ class ProfileAppBar extends StatelessWidget {
           case ConnectionState.done:
             return showProfileData(snapshot);
             break;
+          default:
+            return CircularProgressIndicator();
         }
       },
     );
 
-    // return Stack(
-    //   children: <Widget>[
-    //     GradientBack('Profile', 250.0),
-    //     Column(
-    //       children: <Widget>[
-    //         ProfileCard('assets/img/people.jpg', 'Pathoum Tzoo','pathoumzoo1@gmail.com'),
-    //         ProfileActionRow()
-    //       ],
-    //     )
-    //   ],
-    // );
   }
 
   Widget showProfileData(AsyncSnapshot snapshot){
@@ -66,8 +57,8 @@ class ProfileAppBar extends StatelessWidget {
       );
     } else {
       print('Logeado');
-      print(snapshot);
-      user = User(name: snapshot.data.displayName, email: snapshot.data.email, photoURL: snapshot.data.photoUrl);
+      // print(snapshot);
+      user = User(uid: snapshot.data.uid, name: snapshot.data.displayName, email: snapshot.data.email, photoURL: snapshot.data.photoUrl);
       return Stack(
         children: <Widget>[
           GradientBack('Profile', 250.0),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips/User/bloc/block_user.dart';
+import 'package:trips/User/model/user.dart';
 import 'package:trips/widgets/button_green.dart';
 import 'package:trips/widgets/gradientBack.dart';
 import 'package:trips/widgets/navigation_bar.dart';
@@ -54,7 +55,17 @@ class _SignInScreen extends State<SignInScreen> {
               )),
               ButtonGreen(
                 text: "Login with Gmail",
-                onPressed: (){userBlock.signOut(); userBlock.singnIn().then((user) => print('El usuario es ${user.displayName}'));},
+                onPressed: (){
+                  userBlock.signOut(); 
+                  userBlock.singnIn().then((user) {
+                    userBlock.updateUserData(User(
+                      uid: user.uid,
+                      name: user.displayName,
+                      email: user.email,
+                      photoURL: user.photoUrl
+                    ));
+                  });
+                },
                 width: 300,
                 height: 50,
               )

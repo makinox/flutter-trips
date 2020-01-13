@@ -46,7 +46,7 @@ class ProfileAppBar extends StatelessWidget {
       print('No logeado');
       return Stack(
         children: <Widget>[
-          GradientBack('Profile', 250.0),
+          GradientBack('Profile', 250),
           Column(
             children: <Widget>[
               CircularProgressIndicator(),
@@ -61,7 +61,7 @@ class ProfileAppBar extends StatelessWidget {
       user = User(uid: snapshot.data.uid, name: snapshot.data.displayName, email: snapshot.data.email, photoURL: snapshot.data.photoUrl);
       return Stack(
         children: <Widget>[
-          GradientBack('Profile', 250.0),
+          GradientBack('Profile', 250),
           Column(
             children: <Widget>[
               ProfileCard(user),

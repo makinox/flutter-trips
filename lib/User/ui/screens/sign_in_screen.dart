@@ -17,10 +17,12 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreen extends State<SignInScreen> {
 
+  double screenWidht;
   UserBlock userBlock;
 
   @override
   Widget build(BuildContext context) {
+    screenWidht = MediaQuery.of(context).size.width;
     userBlock = BlocProvider.of(context); 
     return _handleCurrentSession();
   }
@@ -44,31 +46,33 @@ class _SignInScreen extends State<SignInScreen> {
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          GradientBack("", null),
+          GradientBack('', null),
           Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+            Flexible(child: Container(width: screenWidht, child: 
             Text("Welcome \n this is your travel app",
               style: TextStyle(
                 fontSize: 37,
                 fontFamily: "Lato",
                 color: Colors.white,
                 fontWeight: FontWeight.bold
-              )),
-              ButtonGreen(
-                text: "Login with Gmail",
-                onPressed: (){
-                  userBlock.signOut(); 
-                  userBlock.singnIn().then((user) {
-                    userBlock.updateUserData(User(
-                      uid: user.uid,
-                      name: user.displayName,
-                      email: user.email,
-                      photoURL: user.photoUrl
-                    ));
-                  });
-                },
-                width: 300,
-                height: 50,
               )
+            ),),),
+            ButtonGreen(
+              text: "Login with Gmail",
+              onPressed: (){
+                userBlock.signOut(); 
+                userBlock.singnIn().then((user) {
+                  userBlock.updateUserData(User(
+                    uid: user.uid,
+                    name: user.displayName,
+                    email: user.email,
+                    photoURL: user.photoUrl
+                  ));
+                });
+              },
+              width: 300,
+              height: 50,
+            )
           ],)
         ],
       ),

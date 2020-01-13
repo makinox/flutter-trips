@@ -20,10 +20,10 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
   Widget build(BuildContext context) {
     
     return Scaffold(body: Stack(children: <Widget>[
-      GradientBack('', 300),
+      GradientBack('Add a new place', 300),
       Row(children: <Widget>[
         Container(
-          padding: EdgeInsets.only(top: 25, left: 5),
+          padding: EdgeInsets.only(top: 12, left: 0),
           child: SizedBox(
             height: 45,
             width: 45,

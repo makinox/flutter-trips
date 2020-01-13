@@ -6,7 +6,8 @@ class FloatingActionButtonBlue extends StatefulWidget {
   final bool minin;
   final Color color;
   final IconData favIcon;
-  const FloatingActionButtonBlue({Key key, @required this.onPressed, this.minin, this.color, this.favIcon}): super(key: key);
+  final String heroTag;
+  const FloatingActionButtonBlue({Key key, @required this.onPressed, this.minin, this.color, this.favIcon, @required this.heroTag}): super(key: key);
 
   @override
   _FloatingActionButtonBlue createState() => _FloatingActionButtonBlue(); 
@@ -24,6 +25,7 @@ class _FloatingActionButtonBlue extends State<FloatingActionButtonBlue> {
         tooltip: 'Fav',
         onPressed: widget.onPressed,
         child: Icon(widget.favIcon, color: Color(0xFF5252CA),),
+        heroTag: widget.heroTag,
       ),
     );
   }

@@ -14,13 +14,13 @@ class ProfileActionRow extends StatelessWidget {
     return Row( mainAxisSize: MainAxisSize.min, children: <Widget>[
       // FloatingActionButtonBlue(minin: true, color: Colors.white60, favIcon: Icons.bookmark_border,),
       // Cambiar contraseña
-      FloatingActionButtonBlue(minin: true, color: Colors.white60, favIcon: Icons.vpn_key, heroTag: 'Change', onPressed: () {},),
+      FloatingActionButtonBlue(minin: true, color: Colors.white60, favIcon: Icons.vpn_key,  onPressed: () {},),
       // Añadir lugar
-      FloatingActionButtonBlue(minin: false, color: Colors.white, favIcon: Icons.add, heroTag: 'Add new', onPressed: (){
+      FloatingActionButtonBlue(minin: false, color: Colors.white, favIcon: Icons.add, onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => AddPlaceScreen()));
       },),
       // Cerrar sesion
-      FloatingActionButtonBlue(minin: true, color: Colors.white60, favIcon: Icons.exit_to_app, heroTag:  'Log out', onPressed: (){userBlock.signOut();} ),
+      FloatingActionButtonBlue(minin: true, color: Colors.white60, favIcon: Icons.exit_to_app, onPressed: (){userBlock.signOut();} ),
       // FloatingActionButtonBlue(minin: true, color: Colors.white60, favIcon: Icons.perm_identity,),
     ],);
   }

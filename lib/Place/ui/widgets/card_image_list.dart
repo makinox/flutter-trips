@@ -11,11 +11,11 @@ class CardImageList extends StatelessWidget {
         padding: EdgeInsets.all(25),
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          CardImage('assets/img/beach.jpeg'),
-          CardImage('assets/img/beach.jpeg'),
-          CardImage('assets/img/beach.jpeg'),
-          CardImage('assets/img/beach.jpeg'),
-          CardImage('assets/img/beach.jpeg')
+          Container( margin: EdgeInsets.only(bottom: 30), child: CardImage(pathImage: 'assets/img/beach.jpeg', height: 200, width: 300, left: 20, iconData: Icons.favorite_border, onPressedFabIcon: (){print('Presed fav');},),),
+          Container( margin: EdgeInsets.only(bottom: 30), child: CardImage(pathImage: 'assets/img/beach.jpeg', height: 200, width: 300, left: 20, iconData: Icons.favorite_border, onPressedFabIcon: (){print('Presed fav');},),),
+          Container( margin: EdgeInsets.only(bottom: 30), child: CardImage(pathImage: 'assets/img/beach.jpeg', height: 200, width: 300, left: 20, iconData: Icons.favorite_border, onPressedFabIcon: (){print('Presed fav');},),),
+          Container( margin: EdgeInsets.only(bottom: 30), child: CardImage(pathImage: 'assets/img/beach.jpeg', height: 200, width: 300, left: 20, iconData: Icons.favorite_border, onPressedFabIcon: (){print('Presed fav');},),),
+          Container( margin: EdgeInsets.only(bottom: 30), child: CardImage(pathImage: 'assets/img/beach.jpeg', height: 200, width: 300, left: 20, iconData: Icons.favorite_border, onPressedFabIcon: (){print('Presed fav');},),)
         ],
       ),
     );

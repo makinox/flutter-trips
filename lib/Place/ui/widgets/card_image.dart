@@ -3,19 +3,32 @@ import 'package:trips/widgets/floating_action_button_green.dart';
 
 class CardImage extends StatelessWidget {
 
-  final pathImage;
+  final double height;
+  final double width;
+  final double left;
+  final String pathImage;
+  final VoidCallback onPressedFabIcon;
+  final IconData iconData;
 
-  CardImage(this.pathImage);
+  const CardImage(
+    {Key key,
+    @required this.height,
+    @required this.width,
+    @required this.pathImage,
+    @required this.left,
+    @required this.onPressedFabIcon,
+    @required this.iconData}
+  )
+  : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     final card = Container(
-      height: 350,
-      width: 250,
+      height: height,
+      width: width,
       margin: EdgeInsets.only(
-        top: 80,
-        left: 20
+        left: left
       ),
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -36,7 +49,7 @@ class CardImage extends StatelessWidget {
       alignment: Alignment(.9, 1.1),
       children: <Widget>[
         card,
-        FloatingActionButtonGreen()
+        FloatingActionButtonGreen(iconData: iconData, onPressed: onPressedFabIcon,)
       ],
     );
   }

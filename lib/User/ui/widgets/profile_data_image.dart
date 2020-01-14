@@ -76,7 +76,7 @@ class ProfileDataimage extends StatelessWidget {
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[titleText, tagText, stepText],),
       ),
-      FloatingActionButtonGreen(),
+      FloatingActionButtonGreen(iconData: Icons.favorite_border, onPressed: (){print('User fav');}),
     ],);
 
     return Stack(

@@ -57,12 +57,20 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
           buttonText: 'Add place', 
           onPressed: () {
             print('Firebase storage');
+
+            userBlock.currentUser.then((user) {
+              if (user != null) {
+                
+              }
+            } );
+
             userBlock.updatePlaceData(Place(
               name: _controllerTitlePlace.text,
               description: _controllerDescriptionPlace.text,
               likes: 0,
               uriImage: widget.image.path,
               userOwnwer: null
+
             )).whenComplete(() {
               Navigator.pop(context);
             });

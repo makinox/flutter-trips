@@ -14,6 +14,7 @@ class UserBlock implements Bloc {
 
   Stream<FirebaseUser> streamFirebase =  FirebaseAuth.instance.onAuthStateChanged;
   Stream<FirebaseUser> get authStatus => streamFirebase;
+  Future<FirebaseUser> get currentUser =>  FirebaseAuth.instance.currentUser();
 
   // Caso de uso
   // 1. Sign in con google

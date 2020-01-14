@@ -1,7 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips/Place/model/place.dart';
 import 'package:trips/Place/ui/widgets/card_image.dart';
 import 'package:trips/Place/ui/widgets/title_input_location.dart';
+import 'package:trips/User/bloc/block_user.dart';
 import 'package:trips/widgets/button_purple.dart';
 import 'package:trips/widgets/gradientBack.dart';
 import 'package:trips/widgets/text_input.dart';
@@ -23,6 +26,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
   @override
   Widget build(BuildContext context) {
 
+    UserBlock userBlock = BlocProvider.of<UserBlock>(context);
     final _controllerTitlePlace = TextEditingController();
     final _controllerDescriptionPlace = TextEditingController();
     final _controllerLocationPlace = TextEditingController();
@@ -53,6 +57,15 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
           buttonText: 'Add place', 
           onPressed: () {
             print('Firebase storage');
+            userBlock.updatePlaceData(Place(
+              name: _controllerTitlePlace.text,
+              description: _controllerDescriptionPlace.text,
+              likes: 0,
+              uriImage: 'assets/img/beach.jpeg',
+              userOwnwer: null
+            )).whenComplete(() {
+              Navigator.pop(context);
+            });
           },
         ),
       )

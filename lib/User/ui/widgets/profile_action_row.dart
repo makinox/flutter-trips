@@ -21,7 +21,7 @@ class ProfileActionRow extends StatelessWidget {
       FloatingActionButtonBlue(minin: false, color: Colors.white, favIcon: Icons.add, onPressed: (){
         ImagePicker.pickImage(source: ImageSource.camera)
           .then((File image) {
-            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => AddPlaceScreen()));
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => AddPlaceScreen(image: image,)));
           })
           .catchError((onError) => print(onError));
       },),

@@ -12,7 +12,7 @@ import 'package:trips/widgets/text_input.dart';
 class AddPlaceScreen extends StatefulWidget {
 
   final File image;
-  AddPlaceScreen({Key key, this.image});
+  AddPlaceScreen({Key key, @required this.image});
 
   @override
   State<StatefulWidget> createState() {

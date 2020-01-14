@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:trips/Place/ui/widgets/card_image.dart';
 import 'package:trips/Place/ui/widgets/title_input_location.dart';
+import 'package:trips/widgets/button_purple.dart';
 import 'package:trips/widgets/gradientBack.dart';
 import 'package:trips/widgets/text_input.dart';
 
@@ -47,7 +48,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
         margin: EdgeInsets.only(top: 120),
         child: CardImage(
           pathImage: 'assets/img/beach.jpeg',
-          iconData: Icons.camera,
+          iconData: Icons.camera_alt,
           width: 350,
           height: 250,
           left: 0,
@@ -75,6 +76,15 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
         Container(
           margin: EdgeInsets.only(top: 20),
           child: TextInputLocation(hintText: 'Add location', iconData: Icons.location_on, controller: _controllerLocationPlace,),
+        ),
+        Container(
+          width: 70,
+          child: ButtonPurple(
+            buttonText: 'Add place', 
+            onPressed: () {
+              print('Firebase storage');
+            },
+          ),
         )
       ],)
     ],),);

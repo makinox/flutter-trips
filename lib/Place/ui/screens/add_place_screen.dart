@@ -75,7 +75,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                         description: _controllerDescriptionPlace.text,
                         likes: 0,
                         uriImage: urlImage,
-                        userOwnwer: null
+                        // userOwnwer: null
 
                       )).whenComplete(() {
                         Navigator.pop(context);

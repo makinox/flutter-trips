@@ -1,9 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips/Place/repository/firebase_storage_repository.dart';
 import 'package:trips/User/repository/auth_repository.dart';
+import 'package:trips/User/repository/cloud_firestore_api.dart';
 import 'package:trips/User/repository/cloud_firestore_repository.dart';
+import 'package:trips/User/ui/widgets/profile_data_image.dart';
 
 class UserBlock implements Bloc {
 
@@ -39,6 +42,16 @@ class UserBlock implements Bloc {
   // 5.
 
   Future<StorageUploadTask> uploadFile(path, image) => _firebaseStorageRepository.uploadFile(path, image);
+
+  // 6.
+
+  Stream<QuerySnapshot> placesListStream = Firestore.instance.collection(CloudFirestoreAPI().places).snapshots();
+  Stream<QuerySnapshot> get placesStream => placesListStream;
+
+  // 7.
+
+  List<ProfileDataimage> buildPlaces(List<DocumentSnapshot> placesListSnapshot) => _cloudFirestoreRepository.buildPlaces(placesListSnapshot); 
+
 
   @override
   void dispose() {

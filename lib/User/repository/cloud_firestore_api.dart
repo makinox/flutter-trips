@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:trips/Place/model/place.dart';
 import 'package:trips/User/model/user.dart';
+import 'package:trips/User/ui/widgets/profile_data_image.dart';
 
 class CloudFirestoreAPI {
   
@@ -43,6 +44,16 @@ class CloudFirestoreAPI {
         });
       });
     });
+  }
+
+  List<ProfileDataimage> buildPlaces(List<DocumentSnapshot> placesListSnapshot) {
+    List<ProfileDataimage> profilePlaces = List<ProfileDataimage>();
+    placesListSnapshot.forEach((p){
+      profilePlaces.add(ProfileDataimage(p.data['urlImage']));
+    });
+
+    return profilePlaces;
+
   }
 
 }

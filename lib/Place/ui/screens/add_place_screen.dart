@@ -61,7 +61,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
               name: _controllerTitlePlace.text,
               description: _controllerDescriptionPlace.text,
               likes: 0,
-              uriImage: 'assets/img/beach.jpeg',
+              uriImage: widget.image.path,
               userOwnwer: null
             )).whenComplete(() {
               Navigator.pop(context);
@@ -92,7 +92,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
         alignment: Alignment.topCenter,
         margin: EdgeInsets.only(top: 120),
         child: CardImage(
-          pathImage: 'assets/img/beach.jpeg',
+          pathImage: widget.image.path,
           iconData: Icons.camera_alt,
           width: 350,
           height: 250,

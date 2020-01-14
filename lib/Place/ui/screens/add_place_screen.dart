@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:trips/Place/ui/widgets/title_input_location.dart';
 import 'package:trips/widgets/gradientBack.dart';
 import 'package:trips/widgets/text_input.dart';
 
@@ -22,6 +23,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
 
     final _controllerTitlePlace = TextEditingController();
     final _controllerDescriptionPlace = TextEditingController();
+    final _controllerLocationPlace = TextEditingController();
     
     return Scaffold(body: Stack(children: <Widget>[
       GradientBack('Add a new place', 250),
@@ -56,6 +58,10 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
             inputType: TextInputType.multiline,
             maxLines: 4,
             controller: _controllerDescriptionPlace,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 20),
+            child: TextInputLocation(hintText: 'Add location', iconData: Icons.location_on, controller: _controllerLocationPlace,),
           )
         ],),
       )

@@ -26,8 +26,40 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
     final _controllerTitlePlace = TextEditingController();
     final _controllerDescriptionPlace = TextEditingController();
     final _controllerLocationPlace = TextEditingController();
+
+    var form = ListView(children: <Widget>[
+      Container(
+        margin: EdgeInsets.only(top: 400 ,bottom: 20),
+        child: TextInput(
+          hintText: 'Title',
+          inputType: null,
+          maxLines: 1,
+          controller: _controllerTitlePlace,
+        ),
+      ),
+      TextInput(
+        hintText: 'Decription',
+        inputType: TextInputType.multiline,
+        maxLines: 4,
+        controller: _controllerDescriptionPlace,
+      ),
+      Container(
+        margin: EdgeInsets.only(top: 20),
+        child: TextInputLocation(hintText: 'Add location', iconData: Icons.location_on, controller: _controllerLocationPlace,),
+      ),
+      Container(
+        width: 70,
+        child: ButtonPurple(
+          buttonText: 'Add place', 
+          onPressed: () {
+            print('Firebase storage');
+          },
+        ),
+      )
+    ],);
     
     return Scaffold(body: Stack(children: <Widget>[
+      form,
       GradientBack('Add a new place', 250),
       Container(
         padding: EdgeInsets.only(top: 10, left: 0),
@@ -57,36 +89,6 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
           },
         ),
       ),
-      ListView(children: <Widget>[
-        Container(
-          margin: EdgeInsets.only(top: 400 ,bottom: 20),
-          child: TextInput(
-            hintText: 'Title',
-            inputType: null,
-            maxLines: 1,
-            controller: _controllerTitlePlace,
-          ),
-        ),
-        TextInput(
-          hintText: 'Decription',
-          inputType: TextInputType.multiline,
-          maxLines: 4,
-          controller: _controllerDescriptionPlace,
-        ),
-        Container(
-          margin: EdgeInsets.only(top: 20),
-          child: TextInputLocation(hintText: 'Add location', iconData: Icons.location_on, controller: _controllerLocationPlace,),
-        ),
-        Container(
-          width: 70,
-          child: ButtonPurple(
-            buttonText: 'Add place', 
-            onPressed: () {
-              print('Firebase storage');
-            },
-          ),
-        )
-      ],)
     ],),);
   }
 

@@ -19,7 +19,7 @@ class ProfileActionRow extends StatelessWidget {
       FloatingActionButtonBlue(minin: true, color: Colors.white60, favIcon: Icons.vpn_key,  onPressed: () {},),
       // Añadir lugar
       FloatingActionButtonBlue(minin: false, color: Colors.white, favIcon: Icons.add, onPressed: (){
-        ImagePicker.pickImage(source: ImageSource.camera)
+        ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 50)
           .then((File image) {
             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => AddPlaceScreen(image: image,)));
           })

@@ -66,9 +66,16 @@ class CloudFirestoreAPI {
     List<CardImage> placesCard = List<CardImage>();
 
     placesListSnapshot.forEach((p) {
-      placesCard.add(CardImage(pathImage: p.data['urlImage'], height: 200, width: 300, left: 20, iconData: Icons.favorite_border, onPressedFabIcon: (){print('Presed fav');},));
+      placesCard.add(CardImage(pathImage: p.data['urlImage'], height: 200, width: 300, left: 20, iconData: Icons.favorite_border, onPressedFabIcon: (){print('Presed fav'); likePlace(p.documentID);},));
     });
     return placesCard;
+  }
+
+  Future likePlace(String idPlace) async {
+    await _db.collection(places).document(idPlace).get().then((DocumentSnapshot ds) {
+      var likes = ds.data['likes'];
+      _db.collection(places).document(idPlace).updateData({'likes': likes+1});
+    });
   }
 
 }

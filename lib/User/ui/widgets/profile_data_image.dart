@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:trips/Place/model/place.dart';
 import 'package:trips/widgets/floating_action_button_green.dart';
 
 class ProfileDataimage extends StatelessWidget {
 
-  final pathImage;
-  ProfileDataimage(this.pathImage);
-
+  Place place;
+  ProfileDataimage(this.place);
   @override
   Widget build(BuildContext context) {
+    
+    print(place.name);
+    print(place.uriImage);
 
     final titleText = Padding(
       padding: EdgeInsets.only(bottom: 8),
       child: Text(
-        'Knuckles Mountains Range',
+        place.name,
         style: TextStyle(
           fontWeight: FontWeight.w700,
           fontSize: 23
@@ -23,7 +26,7 @@ class ProfileDataimage extends StatelessWidget {
     final tagText = Padding(
       padding: EdgeInsets.only(bottom: 10),
       child: Text(
-        'Hiking, Water fall hunting, Natural bath, Scenery & photography',
+        place.description,
         style: TextStyle(
           color: Colors.black45
         ),
@@ -47,7 +50,7 @@ class ProfileDataimage extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage(pathImage)
+          image: NetworkImage(place.uriImage)
         ),
         borderRadius: BorderRadius.all(Radius.circular(10)),
         shape: BoxShape.rectangle,

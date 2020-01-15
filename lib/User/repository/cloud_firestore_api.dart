@@ -34,6 +34,7 @@ class CloudFirestoreAPI {
         'name': place.name,
         'description': place.description,
         'likes': place.likes,
+        'urlImage': place.uriImage,
         'userOwner': _db.document('$users/${user.uid}')
       }).then((DocumentReference dr) {
         dr.get().then((DocumentSnapshot snapshot) {
@@ -49,7 +50,12 @@ class CloudFirestoreAPI {
   List<ProfileDataimage> buildPlaces(List<DocumentSnapshot> placesListSnapshot) {
     List<ProfileDataimage> profilePlaces = List<ProfileDataimage>();
     placesListSnapshot.forEach((p){
-      profilePlaces.add(ProfileDataimage(p.data['urlImage']));
+      profilePlaces.add(ProfileDataimage(Place(
+        name: p.data['name'],
+        description: p.data['description'],
+        uriImage: p.data['urlImage'],
+        likes: p.data['likes'],
+      )));
     });
 
     return profilePlaces;

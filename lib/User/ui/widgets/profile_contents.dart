@@ -30,13 +30,13 @@ class ProfileContents extends StatelessWidget {
             case ConnectionState.active:
               return ListView(children: <Widget>[Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: userBlock.buildPlaces(snapshot.data.documents),
+                children: userBlock.buildMyPlaces(snapshot.data.documents),
               )],);
               break;
             case ConnectionState.done:
               return ListView(children: <Widget>[Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: userBlock.buildPlaces(snapshot.data.documents),
+                children: userBlock.buildMyPlaces(snapshot.data.documents),
               )],);
               break;
             default:

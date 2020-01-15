@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips/Place/repository/firebase_storage_repository.dart';
+import 'package:trips/Place/ui/widgets/card_image.dart';
 import 'package:trips/User/repository/auth_repository.dart';
 import 'package:trips/User/repository/cloud_firestore_api.dart';
 import 'package:trips/User/repository/cloud_firestore_repository.dart';
@@ -47,14 +48,18 @@ class UserBlock implements Bloc {
 
   Stream<QuerySnapshot> placesListStream = Firestore.instance.collection(CloudFirestoreAPI().places).snapshots();
   Stream<QuerySnapshot> get placesStream => placesListStream;
+  List<CardImage>  buildPlaces(List<DocumentSnapshot> placesListSnapshot) => _cloudFirestoreRepository.buildPlaces(placesListSnapshot);
 
   // 7.
 
-  List<ProfileDataimage> buildPlaces(List<DocumentSnapshot> placesListSnapshot) => _cloudFirestoreRepository.buildPlaces(placesListSnapshot); 
+  List<ProfileDataimage> buildMyPlaces(List<DocumentSnapshot> placesListSnapshot) => _cloudFirestoreRepository.buildMyPlaces(placesListSnapshot); 
 
   // 8.
 
   Stream<QuerySnapshot> myPlacesListStream(String uid) => Firestore.instance.collection(CloudFirestoreAPI().places).where('userOwner', isEqualTo: Firestore.instance.document('${CloudFirestoreAPI().users}/$uid')).snapshots();
+
+  // 9.
+
 
 
   @override

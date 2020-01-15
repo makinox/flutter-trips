@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips/User/bloc/block_user.dart';
+import 'package:trips/User/model/user.dart';
 
 class ProfileContents extends StatelessWidget {
   
   UserBlock userBlock;
+  User user;
+  ProfileContents(this.user);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class ProfileContents extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 250),
       child: StreamBuilder(
-        stream: userBlock.placesStream,
+        stream: userBlock.myPlacesListStream(user.uid),
         builder: (context, AsyncSnapshot snapshot) {
           switch (snapshot.connectionState) {
             

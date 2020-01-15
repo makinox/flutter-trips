@@ -9,8 +9,8 @@ class ProfileDataimage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    print(place.name);
-    print(place.uriImage);
+    // print(place.name);
+    // print(place.uriImage);
 
     final titleText = Padding(
       padding: EdgeInsets.only(bottom: 8),
@@ -35,7 +35,7 @@ class ProfileDataimage extends StatelessWidget {
     );
 
     final stepText = Text(
-      'Steps 123,123,123',
+      'Likes ${place.likes}',
       style: TextStyle(
         fontWeight: FontWeight.w700,
         fontSize: 23,
@@ -46,7 +46,7 @@ class ProfileDataimage extends StatelessWidget {
     final cardImage = Container(
       height: 220,
       width: 380,
-      margin: EdgeInsets.only(bottom: 80),
+      margin: EdgeInsets.only(bottom: 60, top: 20),
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,

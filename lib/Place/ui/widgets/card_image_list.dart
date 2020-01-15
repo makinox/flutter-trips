@@ -9,10 +9,11 @@ class CardImageList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    
     userBlock = BlocProvider.of<UserBlock>(context);
 
     return Container(
+      height: 350,
       child: StreamBuilder(
         stream: userBlock.placesStream,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -24,10 +25,10 @@ class CardImageList extends StatelessWidget {
               return CircularProgressIndicator();
               break;
             case ConnectionState.active:
-              return listViewPlaces(userBlock.buildPlaces(snapshot.data.documents));
+              return Container(margin: EdgeInsets.only(bottom: 30), child: listViewPlaces(userBlock.buildPlaces(snapshot.data.documents)),);
               break;
             case ConnectionState.done:
-              return listViewPlaces(userBlock.buildPlaces(snapshot.data.documents));
+              return Container(margin: EdgeInsets.only(bottom: 30), child: listViewPlaces(userBlock.buildPlaces(snapshot.data.documents)),);
               break;
             default:
               return CircularProgressIndicator();
@@ -40,7 +41,7 @@ class CardImageList extends StatelessWidget {
 
 Widget listViewPlaces(List<CardImage> placesCard) {
   return ListView(
-    // padding: EdgeInsets.all(25),
+    padding: EdgeInsets.all(25),
     scrollDirection: Axis.horizontal,
     children: placesCard,
   );
